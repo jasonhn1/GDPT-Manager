@@ -1,0 +1,46 @@
+th.mat-header-cell:last-of-type, td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type {
+    padding-right: 0px; 
+}
+
+.mat-stroked-button {
+    padding: 0 15px;
+    line-height: 34px;
+    color:black;
+    border-radius: 100px;
+    background-color: white;
+    
+}
+
+
+.footer-bottom{
+    background: #142b5c;
+    width:100vw;
+    height:40px;
+    padding:20px 0;
+    text-align: center;
+    margin:0;
+    bottom:0;
+}
+
+.footer-bottom p {
+    color:white;
+    font-size:14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.footer-bottom span {
+    opacity: .4;
+    font-weight: 200;
+}
+
+table{
+    width:80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div{
+    padding-bottom: 30px;
+    padding-top:30px;
+}

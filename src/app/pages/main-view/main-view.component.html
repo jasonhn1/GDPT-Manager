@@ -1,0 +1,63 @@
+
+  <button mat-stroked-button>
+    <mat-icon>add_circle_outline</mat-icon>
+  </button>
+
+<table mat-table [dataSource]="members" class="mat-elevation-z8 table">
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let member" > {{member.name}} </td>
+      <!-- *matCellDef="let element" -->
+    </ng-container>
+  
+    <!-- Address Column -->
+    <ng-container matColumnDef="address">
+        <th mat-header-cell *matHeaderCellDef> Address </th>
+        <td mat-cell *matCellDef="let member"> {{member.address}} </td>
+      </ng-container>
+
+    <!-- dob Column -->
+    <ng-container matColumnDef="dob">
+      <th mat-header-cell *matHeaderCellDef> Date Of Birth </th>
+      <td mat-cell *matCellDef="let member"> {{member.dob}} </td>
+    </ng-container>
+  
+    <!-- Phap Danh Column -->
+    <ng-container matColumnDef="phapdanh">
+      <th mat-header-cell *matHeaderCellDef> Pháp Danh </th>
+      <td mat-cell *matCellDef="let member"> {{member.phapdanh}} </td>
+    </ng-container>
+
+    <!-- Emergency Contact Column -->
+    <ng-container matColumnDef="contact">
+      <th mat-header-cell *matHeaderCellDef> Emergency Contact </th>
+      <td mat-cell *matCellDef="let member"> {{member.contact.name}} </td>
+    </ng-container>
+
+    <!-- Active Column -->
+    <ng-container matColumnDef="active">
+      <th mat-header-cell *matHeaderCellDef> Active </th>
+      <td mat-cell *matCellDef="let member"> {{member.active}} </td>
+    </ng-container>
+
+    <ng-container class = "edit-spacing" matColumnDef="edit">
+      <th mat-header-cell *matHeaderCellDef> Edit </th>
+      <td mat-cell *matCellDef="let member"><button mat-icon-button><mat-icon aria-label="Edit icon">edit</mat-icon></button></td>
+    </ng-container>
+
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef> Delete </th>
+      <td mat-cell *matCellDef="let member"><button mat-icon-button><mat-icon aria-label="Delete icon">delete</mat-icon></button></td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+
+  <div></div>
+
+  <footer class = "footer-bottom">
+    <p>copyright &copy;2021 GDPT Manager By <span>Jason Huy Nguyễn</span></p>
+  </footer>
