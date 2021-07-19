@@ -7,15 +7,14 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class MemberService {
-
   constructor(private webService:WebService) { }
   
   getMembers(){
     return this.webService.get('members');
   }
 
-  addMember(title:string){
-    return this.webService.post('members',{title});
+  addMember(){
+    return this.webService.post('members',"");
   }
 
   deleteMember(memberId:string){

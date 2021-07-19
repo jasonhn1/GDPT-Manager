@@ -12,7 +12,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTableModule} from '@angular/material/table';
 import { NavbarComponent } from './pages/navbar/navbar.component';
 import { MatIconModule } from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule , ReactiveFormsModule } from '@angular/forms';
+import {MatCardModule } from '@angular/material/card';
+import {MatInputModule} from '@angular/material/input';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -22,6 +30,7 @@ import {MatButtonModule} from '@angular/material/button';
     EditMemberComponent,
     AddMemberComponent,
     NavbarComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -30,7 +39,16 @@ import {MatButtonModule} from '@angular/material/button';
     HttpClientModule,
     MatTableModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatPaginatorModule,
+    MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatCardModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

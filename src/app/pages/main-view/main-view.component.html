@@ -1,9 +1,10 @@
-
-  <button mat-stroked-button>
+<app-navbar></app-navbar> 
+  <div></div>
+  <button (click) = "addMemberClick()" class = "add-button" mat-stroked-button>
     <mat-icon>add_circle_outline</mat-icon>
   </button>
 
-<table mat-table [dataSource]="members" class="mat-elevation-z8 table">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table">
     <!-- Name Column -->
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef> Name </th>
@@ -54,10 +55,12 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
-
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator> 
 
   <div></div>
 
-  <footer class = "footer-bottom">
-    <p>copyright &copy;2021 GDPT Manager By <span>Jason Huy Nguyễn</span></p>
+  <footer class="footer footer-bottom">
+    <div class="container">
+      <p>copyright &copy;2021 GDPT Manager By <span>Jason Huy Nguyễn</span></p>
+    </div>
   </footer>
