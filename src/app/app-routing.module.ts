@@ -6,7 +6,7 @@ import { AddMemberComponent } from './pages/add-member/add-member.component';
 // These are the routes in our 
 const routes: Routes = [
   {path:'',component: MainViewComponent},
-  {path:'add-member', component: AddMemberComponent}, 
+  {path:'add-member', component: AddMemberComponent},
 ];
 
 @NgModule({

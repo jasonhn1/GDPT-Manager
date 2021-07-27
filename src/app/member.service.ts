@@ -13,8 +13,8 @@ export class MemberService {
     return this.webService.get('members');
   }
 
-  addMember(){
-    return this.webService.post('members',"");
+  addMember(memberJson:any){
+    return this.webService.post('members',memberJson);
   }
 
   deleteMember(memberId:string){
