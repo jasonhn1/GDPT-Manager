@@ -43,7 +43,7 @@ app.patch('/members/:memberId', (req,res) =>{
     .catch((error) => console.log(error));
 });
 
-// This deletes a list
+// This deletes a memeber
 app.delete('/members/:memberId', (req,res) =>{
    const member = Member.findByIdAndDelete(req.params.memberId)
     .then((member)=> res.status(200).send(member))

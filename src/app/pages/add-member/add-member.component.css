@@ -1,14 +1,57 @@
 mat-card{
-  width: 80%;
+  display:flex;
+  justify-content:center;
+  width: 60%;
+  height:80%;
   margin-left: auto;
   margin-right: auto;
 }
+
 div{
   padding-bottom: 30px;
   padding-top:30px;
 }
 
+h4{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+table,tr,td{
+  padding-bottom: 0px;
+  padding-top: 0px;
+  
+}
+.table-spacing{
+  padding-bottom: 0px;
+  padding-top: 0px;
+  
+}
+.borders{
+  border-color: white;
+}
+
 .ex{
-  background-image : url("src/assets/images/logo1.png");
-  background-size: cover;
+  background-image : url("src/assets/images/Dharma_Wheel.png");
+  background-size: 95px 59px;
+}
+
+td{
+  padding-right: 60px;
+}
+
+/* html,body{
+  background-color: #05e8ba;
+  background-image: linear-gradient(315deg, #05e8ba 0%, #087ee1 74%);
+} */
+mat-card-title{
+  padding-top: 20px;
+}
+
+
+.space-top{
+  padding-top: 300px;
+}
+
+.space-bottom{
+  padding-bottom: 300px;
 }

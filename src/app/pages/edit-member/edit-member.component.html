@@ -1,1 +1,107 @@
-<p>edit-member works!</p>
+
+<div class="spacing-top"></div>
+<mat-card>
+<form [formGroup] = "memberForm" (ngSubmit)="onSubmit()" class="example-form">
+    <mat-card-header>
+      <div mat-card-avatar class="ex"></div>
+      <mat-card-title>Edit Member</mat-card-title>
+      <mat-card-subtitle>"Happiness is when what you think, what you say, and what you do are in harmony.
+        - Ghandi"</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+    <mat-divider></mat-divider>
+    <h4>Name</h4>
+  <table cellspacing="0"><tr>
+    <div class = "table-spacing" formGroupName="name">
+    <td><mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>First name</mat-label>
+      <input matInput formControlName= "firstname">
+    </mat-form-field></td>
+    <td><mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Last Name</mat-label>
+      <input matInput formControlName= "lastname">
+    </mat-form-field></td>
+  </div>
+  </tr></table>
+  <mat-divider></mat-divider>
+  <h4>Date Of Birth</h4>
+    <mat-form-field appearance="fill">
+      <mat-label>Choose a date</mat-label>
+      <input matInput formControlName = 'dob'[matDatepicker]="picker">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
+    </mat-form-field>
+    <mat-divider></mat-divider>
+  <h4>Address</h4>
+  <div class = "table-spacing" formGroupName="address">
+    <mat-form-field appearance="fill">
+      <mat-label>Street</mat-label>
+      <textarea matInput formControlName= "street" placeholder="Ex. 100 Main St" ></textarea>
+    </mat-form-field>
+  <table class="example-full-width" cellspacing="0"><tr>
+    <td><mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>City</mat-label>
+      <input matInput formControlName= "city" placeholder="Ex. San Francisco" >
+    </mat-form-field></td>
+    <td>
+      <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>State</mat-label>
+      <mat-select formControlName= "state">
+        <mat-option *ngFor="let state of states" [value] = "state">
+          {{state}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </td>
+    <td><mat-form-field appearance="fill">
+      <mat-label>Postal Code</mat-label>
+      <input matInput maxlength="5" formControlName= "postalcode" placeholder="Ex. 94105">
+    </mat-form-field></td>
+  </tr></table>
+</div>
+
+<mat-divider></mat-divider>
+
+  <h4>Emergency Contact</h4>
+  <table class="example-full-width" cellspacing="0">
+    <div class = "table-spacing" formGroupName="contact">
+    <tr>
+    <td><mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName = "name" placeholder="Ex. John Smith">
+    </mat-form-field></td>
+    <td><mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Relation</mat-label>
+      <input matInput formControlName = "relation" placeholder="Ex. Father">
+    </mat-form-field></td>
+    <td><mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Phone Number</mat-label>
+      <input matInput formControlName = "phone" >
+    </mat-form-field></td>
+    </tr>
+    </div>
+  </table>
+
+  <mat-divider></mat-divider>
+
+  <h4>Status</h4>
+  <table class="example-full-width" cellspacing="0"><tr>
+    <td><mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Active</mat-label>
+      <input matInput value="True" disabled>
+    </mat-form-field></td>
+    <td><mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Pháp Danh</mat-label>
+      <input matInput value="N/A" type="text" disabled>
+    </mat-form-field></td>
+  </tr></table>
+
+  </mat-card-content>
+  <mat-card-actions>
+    <button class= "borders" type = "submit" mat-stroked-button>ADD</button>
+    <button class= "borders" mat-stroked-button routerLink ='../'>CANCEL</button>
+  </mat-card-actions>
+</form>
+</mat-card>
+
+<div class="spacing-bottom"></div>
