@@ -51,7 +51,6 @@ export class MainViewComponent implements OnInit {
   deleteMember(member:Member){
     this.dialogService.openConfirmDialog()
     .afterClosed().subscribe(res =>{
-      console.log(res);
       if (res){
           this.memberService.deleteMember(member._id)
           .subscribe(() => 

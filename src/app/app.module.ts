@@ -23,6 +23,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatDialogModule} from '@angular/material/dialog';
+import { SearchBarComponent } from './component/search-bar/search-bar.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     EditMemberComponent,
     AddMemberComponent,
     NavbarComponent,
+    SearchBarComponent,
 
   ],
   imports: [

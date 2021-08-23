@@ -21,12 +21,7 @@ export class MemberService {
     return this.webService.delete(`members/${memberId}`);
   }
 
-  // editMember(memberId:string){
-  //   return this.webService.patch(`members/${memberId}`);
-  // }
-
-  // setCompleted(listId:string,task:Task){
-  //   return this.webService.patch(`lists/${listId}/tasks/${task._id}`,{completed:!task.completed});
-  // }
-
+  editMember(memberJson:any){
+  return this.webService.patch(`members/${memberJson._id}`,memberJson);
+  }
 }

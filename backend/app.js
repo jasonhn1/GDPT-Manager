@@ -3,7 +3,6 @@ const app = express();
 const cors = require('cors');
 const mongoose = require('./mongoose.js');
 
-
 const Member = require('./models/member');
 
 app.use(express.json()); // parse JSON data from front to back

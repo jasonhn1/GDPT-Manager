@@ -1,11 +1,11 @@
 
 <div class="spacing-top"></div>
 <mat-card>
-<form [formGroup] = "memberForm" (ngSubmit)="onSubmit()" class="example-form">
+<form [formGroup] = "editMemberForm" (ngSubmit)="onSubmit()" class="example-form">
     <mat-card-header>
       <div mat-card-avatar class="ex"></div>
       <mat-card-title>Edit Member</mat-card-title>
-      <mat-card-subtitle>"Happiness is when what you think, what you say, and what you do are in harmony.
+      <mat-card-subtitle>"You must be the change you wish to see in the world
         - Ghandi"</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
@@ -36,7 +36,7 @@
   <div class = "table-spacing" formGroupName="address">
     <mat-form-field appearance="fill">
       <mat-label>Street</mat-label>
-      <textarea matInput formControlName= "street" placeholder="Ex. 100 Main St" ></textarea>
+      <textarea matInput formControlName= "street" [placeholder]="this.street" ></textarea>
     </mat-form-field>
   <table class="example-full-width" cellspacing="0"><tr>
     <td><mat-form-field class="example-full-width" appearance="fill">
@@ -88,17 +88,17 @@
   <table class="example-full-width" cellspacing="0"><tr>
     <td><mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Active</mat-label>
-      <input matInput value="True" disabled>
+      <input matInput formControlName = "active">
     </mat-form-field></td>
     <td><mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Pháp Danh</mat-label>
-      <input matInput value="N/A" type="text" disabled>
+      <input matInput type="text" formControlName = "phapdanh">
     </mat-form-field></td>
   </tr></table>
 
   </mat-card-content>
   <mat-card-actions>
-    <button class= "borders" type = "submit" mat-stroked-button>ADD</button>
+    <button class= "borders" type = "submit" mat-stroked-button> UPDATE</button>
     <button class= "borders" mat-stroked-button routerLink ='../'>CANCEL</button>
   </mat-card-actions>
 </form>

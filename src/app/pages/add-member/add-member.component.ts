@@ -70,8 +70,8 @@ export class AddMemberComponent implements OnInit {
     this.member = {
       _id:"",
       name: this.memberForm.value.name.firstname + " " + this.memberForm.value.name.lastname,
-      address: this.memberForm.value.address.street + " "+ this.memberForm.value.address.city
-      + " " + this.memberForm.value.address.state+ " " + this.memberForm.value.address.postalcode,
+      address: this.memberForm.value.address.street + ", "+ this.memberForm.value.address.city
+      + ", " + this.memberForm.value.address.state+ " " + this.memberForm.value.address.postalcode,
       dob:member_dob,
       phapdanh: this.memberForm.value.phapdanh,
       contact:this.memberForm.value.contact,
@@ -80,6 +80,5 @@ export class AddMemberComponent implements OnInit {
 
     this.memberService.addMember(this.member).subscribe(
       ()=> this.router.navigate(['../'],{relativeTo: this.route}));
-
   }
 }

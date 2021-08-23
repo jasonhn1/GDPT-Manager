@@ -9,7 +9,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 export class DeleteMemberComponent implements OnInit {
 
   constructor(public dialogRef:MatDialogRef<DeleteMemberComponent>) { }
-
+  
   ngOnInit(): void {
   }
 
