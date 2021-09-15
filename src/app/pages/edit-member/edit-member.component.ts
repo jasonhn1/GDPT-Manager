@@ -1,4 +1,4 @@
-import { Component, OnInit,AfterViewInit, Input, Output, EventEmitter  } from '@angular/core';
+import { Component, OnInit,ElementRef,AfterViewInit } from '@angular/core';
 import { ActivatedRoute,Router } from '@angular/router';
 import {MemberService} from 'src/app/member.service';
 import Member from 'src/app/model/member';
@@ -10,7 +10,7 @@ import { EditDataService } from 'src/app/edit-data.service';
   templateUrl: './edit-member.component.html',
   styleUrls: ['./edit-member.component.css']
 })
-export class EditMemberComponent implements OnInit {
+export class EditMemberComponent implements OnInit,AfterViewInit {
 
   member: Member = new Member();
 
@@ -28,7 +28,8 @@ export class EditMemberComponent implements OnInit {
 
   startDate = new Date(2000, 0, 1);
   
-  constructor( private _editMemberService: EditDataService,
+  constructor(private elementRef: ElementRef,
+    private _editMemberService: EditDataService,
     private formBuilder:FormBuilder
     ,private memberService: MemberService,
     private route:ActivatedRoute,
@@ -39,6 +40,11 @@ export class EditMemberComponent implements OnInit {
     this.getAddress();
     this.getName();
     this.initializeForm();
+  }
+
+  ngAfterViewInit():void{
+    this.elementRef.nativeElement.ownerDocument
+    .body.style.backgroundImage = 'linear-gradient(to bottom right, #A1FFCE, #FAFFD1)';
   }
 
   getName(){

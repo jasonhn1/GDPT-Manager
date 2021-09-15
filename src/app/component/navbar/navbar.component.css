@@ -1,0 +1,44 @@
+.navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .nav-link.active {
+    color: white;
+}
+
+.bg-dark {
+    background-color: #02293b !important;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    padding:10px 5px;
+}
+
+img{
+    padding-left:60px;
+    padding-right:30px;
+}
+
+button{
+    transition: all 0.7s ease;
+    background: rgb(88, 184, 136);
+    padding: 0px;
+    margin-right: 90px;
+
+}
+
+button:hover{
+    background-color:#1f966e;
+    padding-left: 40px;
+}
+
+
+nav{
+    margin-bottom: 25px;
+    background:#02293b;
+}
+
+mat-icon{
+    margin-right: 100%;
+    color:white;
+    font-size: 50px;
+    padding: 0px;
+}

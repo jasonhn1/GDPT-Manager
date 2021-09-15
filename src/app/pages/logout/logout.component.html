@@ -1,0 +1,12 @@
+<h2 mat-dialog-title>Log Out Confirmation</h2>
+<button mat-button (click) = "closeDialog()"><mat-icon>close</mat-icon></button>
+<br>
+<br>
+<br>
+<mat-dialog-content>
+  Are you sure you want to sign out?
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button [mat-dialog-close] = "true">Yes</button>
+  <button mat-button [mat-dialog-close] = "false">No</button>
+</mat-dialog-actions>

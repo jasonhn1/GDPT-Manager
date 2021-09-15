@@ -1,4 +1,255 @@
 
+<mat-stepper class="container" linear #stepper>
+  <mat-step [stepControl]="nameFormGroup" [editable]="isEditable">
+    <form [formGroup]="nameFormGroup">
+      <ng-template matStepLabel>Fill Out Name and DOB</ng-template>
+      <mat-divider></mat-divider>
+
+      <mat-form-field appearance="fill">
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="firstName" value = "Jason" placeholder = "Ex. John" >
+      </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Last Name</mat-label>
+        <input matInput formControlName="lastName" value = "Nguyen" placeholder= "Ex. Doe" >
+        </mat-form-field>
+
+       <mat-form-field appearance="fill">
+        <mat-label>Date of Birth</mat-label>
+        <input matInput formControlName = "dob" [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
+      </mat-form-field> 
+
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+
+   <mat-step [stepControl]="addressFormGroup" [editable]="isEditable">
+    <form [ngStyle]="{'display': 'inline-block'}" [formGroup]="addressFormGroup">
+      <ng-template matStepLabel>Fill Out Address</ng-template>
+      <mat-divider></mat-divider>
+      
+      <mat-form-field appearance="fill">
+        <mat-label>Street</mat-label>
+        <textarea matInput formControlName="street" ></textarea>
+      </mat-form-field>
+      
+      <mat-form-field appearance="fill">
+        <mat-label>City</mat-label>
+        <input matInput formControlName="city" placeholder="Ex. 1 Main St, New York, NY" >
+      </mat-form-field>
+
+      
+
+      <mat-form-field  appearance="fill">
+        <mat-label>State</mat-label>
+        <mat-select formControlName= "state">
+          <mat-option *ngFor="let state of states" [value] = "state">
+            {{state}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Postal Code</mat-label>
+        <input matInput formControlName="postalcode" placeholder="Ex. 95624" >
+      </mat-form-field>
+
+
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext (click) = "mapAddress()">Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="contactFormGroup" [editable]="isEditable">
+    <form [formGroup]="contactFormGroup">
+      <ng-template matStepLabel>Fill Out Contact</ng-template>
+      <mat-divider></mat-divider>
+      <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" >
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Relation</mat-label>
+        <input matInput formControlName="relation" placeholder="Ex. 1 Main St, New York, NY" >
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Phone Number</mat-label>
+        <input matInput formControlName="phone" placeholder="Ex. 95624" >
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step> 
+
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    
+
+<mat-accordion class="example-headers-align">
+  <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        GDPT Member Form
+      </mat-panel-title>
+      <mat-panel-description>
+        Review
+        <mat-icon>account_circle</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+
+    <div class="wrapper">
+      <div class="box1">
+        <mat-card [ngStyle]="{'text-align': 'center'}">
+          <mat-icon class="major">face</mat-icon> <span>Name and DOB</span>
+        </mat-card>
+        <div class = "name-section">
+          <mat-card>
+            <div class="tag">First Name</div>
+            <p>{{nameFormGroup.value.firstName}}</p>
+          </mat-card>
+          <mat-card>
+            <div class ="tag">Last Name</div>
+            <p>{{nameFormGroup.value.lastName}}</p>
+          </mat-card>
+          <mat-card>
+            <div class ="tag">Date of Birth</div>
+            <p>{{dts(nameFormGroup.value.dob)}}</p>
+          </mat-card>
+        </div>
+      </div>
+
+      <div class="box2">
+        <mat-card>
+          <mat-icon class="major">location_city</mat-icon> 
+          <div class ="address-tag"><span>Address</span></div>
+        </mat-card>
+        <mat-card [ngStyle]="{'margin-right': 'auto','margin-left': 'auto','margin-top': '20px','width':'80%'}">
+          <mat-icon class="green"> pin_drop</mat-icon>
+          <p>{{addressFormGroup.value.street + " "+ addressFormGroup.value.city+", " + addressFormGroup.value.state +" "+ addressFormGroup.value.postalcode }}</p>
+        </mat-card>
+        <mat-card [ngStyle]="{'margin-right': 'auto','margin-left': 'auto','margin-top': '20px','width':'80%'}">
+          <div class="map-size" id="map"></div>
+        </mat-card>
+      </div>
+
+      <div class="box3">
+        <mat-card [ngStyle]="{'text-align': 'center'}">
+          <mat-icon class="major">contacts</mat-icon> <span>Emergency Contact</span>
+        </mat-card>
+
+        <div class="contact-section">
+          <div class = "tag-lab">
+          <mat-card [ngStyle]="{'margin-top': '30px'}">
+            <div class ="contact-tag">Name</div>
+            <p>{{contactFormGroup.value.name}}</p>
+          </mat-card>
+          </div>
+          <mat-card>
+            <div class ="contact-tag">Relation</div>
+            <p>{{contactFormGroup.value.relation}}</p>
+          </mat-card>
+          <mat-card>
+            <div class ="contact-tag">Phone</div>
+            <p>{{contactFormGroup.value.phone}}</p>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+
+    <!-- <mat-divider></mat-divider>
+    <h3>Name and Date Of Birth</h3>
+    <div class = "name-section">
+
+    <mat-card>
+      {{nameFormGroup.value.firstName}}
+    </mat-card>
+
+    <mat-card>
+      {{nameFormGroup.value.lastName}}
+    </mat-card>
+
+    <mat-card >
+        {{nameFormGroup.value.firstName}}
+      <span>
+        {{nameFormGroup.value.dob}}
+      </span>
+      </mat-card>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <h3>Address</h3>
+    <div class = "name-section">
+
+    <mat-card>
+      {{addressFormGroup.value.firstName}}
+    </mat-card>
+
+    <mat-card>
+      {{addressFormGroup.value.lastName}}
+    </mat-card>
+
+    <mat-card>
+        {{addressFormGroup.value.firstName}}
+      </mat-card>
+    </div> -->
+
+
+
+    <mat-action-row>
+      <button mat-button color="primary" (click)="onSubmit()">Done</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>
+
+    <!-- <div class="name-card">
+    <mat-card  [ngStyle]="{'float': 'left','display':'inline-block','background-color': '#03fcdb'}">
+      {{nameFormGroup.value.firstName}}
+    </mat-card>
+    <mat-card  [ngStyle]="{'float': 'right','display':'inline-block','background-color': '#03fcdb'}">
+      {{nameFormGroup.value.lastName}}
+    </mat-card>
+    </div>
+
+    <mat-card  [ngStyle]="{'float': 'left','background-color': '#03fcdb'}">
+      {{addressFormGroup.value.street}}
+    </mat-card>
+    <mat-card  [ngStyle]="{'float': 'right','background-color': '#03fcdb'}">
+      {{addressFormGroup.value.city}}
+    </mat-card>
+    <mat-card  [ngStyle]="{'float': 'right','background-color': '#03fcdb'}">
+      {{addressFormGroup.value.state}}
+    </mat-card>
+    <mat-card  [ngStyle]="{'float': 'right','background-color': '#03fcdb'}">
+      {{addressFormGroup.value.postalcode}}
+    </mat-card> -->
+
+
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+    </div>
+  </mat-step>
+
+</mat-stepper>
+
+
+
+
+
+
+
+<!-- 
 <div class="spacing-top"></div>
 <mat-card>
 <form [formGroup] = "memberForm" (ngSubmit)="onSubmit()" class="example-form">
@@ -21,7 +272,7 @@
       <mat-label>Last Name</mat-label>
       <input matInput formControlName= "lastname">
     </mat-form-field></td>
-  </div>
+    </div>
   </tr></table>
   <mat-divider></mat-divider>
   <h4>Date Of Birth</h4>
@@ -95,7 +346,6 @@
       <input matInput value="N/A" type="text" disabled>
     </mat-form-field></td>
   </tr></table>
-
   </mat-card-content>
   <mat-card-actions>
     <button class= "borders" type = "submit" mat-stroked-button>ADD</button>
@@ -104,4 +354,4 @@
 </form>
 </mat-card>
 
-<div class="spacing-bottom"></div>
+<div class="spacing-bottom"></div> -->

@@ -1,5 +1,5 @@
 
-<div class="spacing-top"></div>
+
 <mat-card>
 <form [formGroup] = "editMemberForm" (ngSubmit)="onSubmit()" class="example-form">
     <mat-card-header>
@@ -8,6 +8,7 @@
       <mat-card-subtitle>"You must be the change you wish to see in the world
         - Ghandi"</mat-card-subtitle>
     </mat-card-header>
+
     <mat-card-content>
     <mat-divider></mat-divider>
     <h4>Name</h4>
@@ -66,15 +67,15 @@
   <table class="example-full-width" cellspacing="0">
     <div class = "table-spacing" formGroupName="contact">
     <tr>
-    <td><mat-form-field class="example-full-width" appearance="fill">
+    <td><mat-form-field >
       <mat-label>Name</mat-label>
       <input matInput formControlName = "name" placeholder="Ex. John Smith">
     </mat-form-field></td>
-    <td><mat-form-field class="example-full-width" appearance="fill">
+    <td><mat-form-field >
       <mat-label>Relation</mat-label>
       <input matInput formControlName = "relation" placeholder="Ex. Father">
     </mat-form-field></td>
-    <td><mat-form-field class="example-full-width" appearance="fill">
+    <td><mat-form-field >
       <mat-label>Phone Number</mat-label>
       <input matInput formControlName = "phone" >
     </mat-form-field></td>
@@ -85,12 +86,12 @@
   <mat-divider></mat-divider>
 
   <h4>Status</h4>
-  <table class="example-full-width" cellspacing="0"><tr>
-    <td><mat-form-field class="example-full-width" appearance="fill">
+  <table><tr>
+    <td><mat-form-field >
       <mat-label>Active</mat-label>
       <input matInput formControlName = "active">
     </mat-form-field></td>
-    <td><mat-form-field class="example-full-width" appearance="fill">
+    <td><mat-form-field>
       <mat-label>Pháp Danh</mat-label>
       <input matInput type="text" formControlName = "phapdanh">
     </mat-form-field></td>
@@ -103,5 +104,3 @@
   </mat-card-actions>
 </form>
 </mat-card>
-
-<div class="spacing-bottom"></div>

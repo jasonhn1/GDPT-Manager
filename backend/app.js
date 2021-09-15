@@ -1,12 +1,49 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
+
 const mongoose = require('./mongoose.js');
 
 const Member = require('./models/member');
+const User = require('./models/user');
 
-app.use(express.json()); // parse JSON data from front to back
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+
+app.use(express.json());
 app.use(cors());
+
+
+app.post("/login", (req, res, next) => {
+    let fetchedUser;
+
+    User.findOne({email:req.body.email}).then(user=>{
+      if(!user){
+        return res.status(401).json({
+          message: "Auth failed no such email"
+        })
+      }
+      fetchedUser = user;
+
+      if (req.body.password == user.password){
+        const token = jwt.sign(
+            { email: fetchedUser.email, userId: fetchedUser._id },
+            "secret_this_should_be_longer",
+            { expiresIn: "24h" }
+          );
+          res.status(200).json({
+            token: token,
+            expiresIn: 86400,
+            userId: fetchedUser._id
+          });
+      }else{
+        return res.status(401).json({
+            message: "Auth failed inccorect password"
+          })
+      }
+    
+    })
+  });
 
 // Gets all the members from the database
 app.get('/members',(req,res)=>{

@@ -1,0 +1,43 @@
+.img{
+    height: 100%;
+    width: 100%;
+    background: url('src/assets/images/ocean.jpg');
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover; 
+}
+
+
+h2:first-child{
+    margin-top: 200px;
+}
+
+h2{
+    margin-top: 50px;
+    color: white;
+    font-family: Trebuchet MS;
+    font-weight: bold;
+    text-align: center;
+    font-size: 4rem;
+    padding: 10px;
+
+    opacity: 0;
+    animation: 4s fadeIn;
+    animation-fill-mode: forwards;
+   
+  }
+  
+
+  @keyframes fadeIn {
+
+    from {    opacity: 0;}
+    to {    opacity: 1;}
+
+    /* 99% {
+      visibility: hidden;
+    }
+    100% {
+      visibility: visible;
+      transition: visibility 0s, opacity 0.5s linear;
+    } */
+  }

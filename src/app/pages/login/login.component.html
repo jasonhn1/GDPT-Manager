@@ -1,0 +1,53 @@
+
+<video id = "background-video" autoplay="autoplay" [muted]="muted" loop>
+    <source src="./assets/images/Final_waterfall.mp4" type="video/mp4">
+    <!-- <source src="https://assets.codepen.io/6093409/river.mp4" type="video/mp4"> -->
+</video>
+
+
+
+<div id="mat-card">
+      <h2 class= "first">GDPT Manager</h2>
+      <h2 class="log">Login</h2>
+      <form>
+            <mat-form-field>
+                <input #email name="email" matInput placeholder="Email">
+            </mat-form-field>
+            <mat-form-field id ="space">
+                <input #password name="password" matInput placeholder="Password">
+            </mat-form-field>
+        </form>
+        <button mat-raised-button (click)="onSubmit(email.value,password.value)">Sign In</button>
+</div>
+<div class= "wrapper">
+    <div class= "box1">
+        <div class="elephant">
+        </div>
+        <div class="flower">
+            
+        </div>
+        <div class="sign">
+
+        </div>
+    </div>
+    <div class= "box2 img">
+    </div>
+</div> 
+
+
+<!-- <div class= "img">
+<div class = "container">
+    <mat-card>
+      <p class= "next">GDPT Manager Login</p>
+        <form>
+            <mat-form-field>
+                <input #email name="email" matInput placeholder="Email">
+            </mat-form-field>
+            <mat-form-field id ="space">
+                <input #password name="password" matInput placeholder="Password">
+            </mat-form-field>
+        </form>
+        <button mat-raised-button (click)="onSubmit(email.value,password.value)">Sign In</button>
+    </mat-card>
+</div>
+</div> -->

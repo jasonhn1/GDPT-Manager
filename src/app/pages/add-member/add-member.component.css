@@ -1,16 +1,12 @@
-mat-card{
-  display:flex;
-  justify-content:center;
-  width: 60%;
-  height:80%;
+.container{
+  border-radius: 25px;
+  top: 50%;
+  left: 50%;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 120px;
 }
 
-div{
-  padding-bottom: 30px;
-  padding-top:30px;
-}
 
 h4{
   padding-top: 10px;
@@ -39,14 +35,11 @@ td{
   padding-right: 60px;
 }
 
-/* html,body{
-  background-color: #05e8ba;
-  background-image: linear-gradient(315deg, #05e8ba 0%, #087ee1 74%);
-} */
-mat-card-title{
-  padding-top: 20px;
+.name-card{
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
-
 
 .space-top{
   padding-top: 300px;
@@ -54,4 +47,190 @@ mat-card-title{
 
 .space-bottom{
   padding-bottom: 300px;
+}
+
+mat-stepper, mat-step{
+  background: #2a393f;
+}
+
+mat-tab{
+  align-items: center;
+  justify-content: center;
+}
+form{
+  height: 300px;
+  width: 300px;
+}
+
+
+.name{
+  width: 50%;
+  float: left;
+  margin-right:20px;
+  float:left;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.example-headers-align .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+
+mat-grid-tile {
+  background: lightblue;
+}
+
+h3{
+  text-align: center;
+}
+
+.name-section{
+  display: flex;
+  justify-content:space-between;
+  padding: 20px;
+}
+
+.name-section mat-card{
+text-align: center;
+}
+
+mat-divider{
+  padding: 10px;
+}
+
+mat-card{
+  background: #303e44;
+}
+
+p{
+  padding-top: 10px;
+}
+
+.tag{
+  border-radius: 5px;
+  border: 2px solid #20a758 ;
+  background-color: #20a758;
+  margin-top: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.contact-tag{
+  border-radius: 4px;
+  border: 2px solid #20a758;
+  background-color: #20a758;
+  /* display: inline-block; */
+  overflow: hidden;
+}
+
+.address-tag{
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+
+  text-align: center;
+  font-size:1.2em;
+}
+.postal{
+  display: inline;
+}
+
+.wrapper {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 100px;
+}
+
+.box1 {
+  border-radius: 5px;
+  background-color: #eeeeee;
+  
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.box2 {
+  border-radius: 5px;
+  background-color: #eeeeee;
+  margin-top:10px;
+  
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 8;
+}
+
+.box3 {
+
+  border-radius: 5px;
+  background-color: #eeeeee;
+  margin-left: 10px;
+
+  grid-column-start: 3;
+  grid-column-end: 6;
+  grid-row-start: 1;
+  grid-row-end: 6;
+}
+
+/* Set the size of the div element that contains the map */
+.map-size {
+  height:270px;
+  /* The height is 400 pixels */
+  width: 100%;
+  /* The width is the width of the web page */
+}
+
+.contact-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contact-section mat-card{
+  flex: 1;
+  width: 50%;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+mat-expansion-panel{
+  background: #00424f;
+}
+
+.mat-expansion-panel-header.mat-expanded:focus, .mat-expansion-panel-header.mat-expanded:hover{
+  background: #00424f;
+}
+mat-expansion-panel-header,mat-expansion-panel-header:hover{
+  background: #00424f;
+}
+
+button{
+  background-color: white;
+  margin: 10px;
+}
+
+mat-icon{
+  font-size: 30px;
+  float: left;
+  vertical-align: middle;
+}
+.major{
+  color: #f3fd94;
+}
+.green{
+  color:#20a758;
+  padding-right: 50px;
+}
+span{
+  padding-left: 20px;
+  vertical-align: middle;
+  font-size: 20px;
 }

@@ -6,5 +6,8 @@ mongoose.connect("mongodb+srv://root:root@cluster0.7i9bo.mongodb.net/Chua?retryW
                 ,{useNewUrlParser:true,useUnifiedTopology:true,useFindAndModify:false})
         .then(()=> console.log("Database connected"))
         .catch((error) =>console.log(error));
+
+
+
  
 module.exports = mongoose;

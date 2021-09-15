@@ -1,0 +1,250 @@
+.img{
+  height: 100%;
+  width: 100%;
+  background: url('src/assets/images/lotus.jpg');
+  background-position: center;
+ 
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.over{
+  overflow-y: hidden;
+}
+
+#background-video{
+  height: 100vh;
+  width: 45%;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.next{
+  font-size:30px;
+  padding: 20px;
+  color:#ffffff;
+  border-radius: 2px;
+}
+.mat-input-element {
+  caret-color: #ffffff;;
+}
+#mat-card{
+    float: left;
+    width: 45%;
+    height: 100%;
+  
+    border-right: 10px solid #a8d0d8;
+}
+
+form{
+    margin-bottom: 20px;
+}
+
+mat-form-field{
+  padding-right: 40px;
+  padding-left: 40px;
+  display: block;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+}
+
+#space{
+    margin-bottom: 20px;
+}
+
+button{
+    width: 100%; 
+    display: block;
+    background-color: #ffffff;
+}
+
+input{
+    padding: 10px;
+}
+
+.wrapper {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 97px;
+}
+
+
+.flower{
+  /* height: 100%;
+  width: 100%; */
+
+  background: url('src/assets/images/flowers.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-top: 10px solid #a8d0d8;
+
+
+  background-color:#00424f;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+
+}
+
+body{
+  overflow-y: hidden;
+}
+
+
+.elephant{
+
+  background: url('src/assets/images/elephant.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  border-right: 10px solid #a8d0d8;
+  border-top: 10px solid #a8d0d8;
+  background-color: #2f4f4f;
+  background-position: center;
+
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.sign{
+  border-left: 10px solid #a8d0d8;
+  background: url('src/assets/images/sign.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+
+  border-top: 10px solid #a8d0d8;
+  background-color: #2a393f;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.box1 {
+  border-radius: 10px;
+  background-color: #02293b;
+  
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.box2 {
+  background-color: #02293b;
+  border-top: 10px solid #a8d0d8;
+  border-bottom: 10px solid #a8d0d8;
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 3;
+  grid-row-end: 7;
+}
+
+
+h2{
+  color: white;
+  font-family: Trebuchet MS;
+  font-weight: bold;
+  text-align: left;
+  font-size: 4rem;
+  padding: 10px;
+}
+
+.first{
+  margin-top: 10vh; 
+  margin-bottom: 0px;
+}
+
+input{
+  color: white;
+}
+.man{
+  margin-top: 10vh; 
+}
+
+.log{
+  margin-top: 10vh; 
+  text-align: left;
+}
+
+button{
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%; 
+  display: block;
+  background-color: #00424f;
+}
+
+/* Centered Login 
+.img{
+  height: 100%;
+  width: 100%;
+    background: url('src/assets/images/lotus.jpg');
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.container{
+  
+  display: grid;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+.next{
+  font-size:30px;
+  padding: 20px;
+  color:#ffffff;
+  border-radius: 2px;
+}
+.mat-input-element {
+  caret-color: #ffffff;;
+}
+mat-card{
+    margin-top: 50%;
+    background-color: #00424f;
+}
+form{
+    margin-bottom: 20px;
+}
+
+mat-form-field{
+  padding-right: 40px;
+  padding-left: 40px;
+  display: block;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+}
+
+#space{
+    margin-bottom: 20px;
+}
+
+button{
+    width: 100%; 
+    display: block;
+    background-color: #ffffff;
+}
+
+input{
+    padding: 10px;
+} */

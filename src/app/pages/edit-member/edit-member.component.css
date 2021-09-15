@@ -1,10 +1,8 @@
 mat-card{
-    display:flex;
-    justify-content:center;
-    width: 60%;
-    height:80%;
+    width: 70%;
     margin-left: auto;
     margin-right: auto;
+    background:#00424f ;
   }
   
   div{
@@ -15,6 +13,7 @@ mat-card{
   h4{
     padding-top: 10px;
     padding-bottom: 10px;
+    padding-left: 10px;
   }
   table,tr,td{
     padding-bottom: 0px;
@@ -29,7 +28,9 @@ mat-card{
   .borders{
     border-color: white;
   }
-  
+  mat-card-actions{
+    margin-left: 20px;
+  }
   .ex{
     background-image : url("src/assets/images/Dharma_Wheel.png");
     background-size: 95px 59px;

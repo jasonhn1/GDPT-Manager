@@ -8,9 +8,11 @@ import { MainViewComponent } from './pages/main-view/main-view.component';
 import { DeleteMemberComponent } from './pages/delete-member/delete-member.component';
 import { EditMemberComponent } from './pages/edit-member/edit-member.component';
 import { AddMemberComponent } from './pages/add-member/add-member.component';
+import { LoginComponent } from './pages/login/login.component';
+import { NavbarComponent } from './component/navbar/navbar.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTableModule} from '@angular/material/table';
-import { NavbarComponent } from './pages/navbar/navbar.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -23,7 +25,14 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatDialogModule} from '@angular/material/dialog';
-import { SearchBarComponent } from './component/search-bar/search-bar.component';
+import { MatSortModule } from '@angular/material/sort';
+import {MatStepperModule} from '@angular/material/stepper';
+import { MatTabsModule } from '@angular/material/tabs';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { LogoutComponent } from './pages/logout/logout.component';
+import { SignoutComponent } from './pages/signout/signout.component';
 
 
 @NgModule({
@@ -34,7 +43,9 @@ import { SearchBarComponent } from './component/search-bar/search-bar.component'
     EditMemberComponent,
     AddMemberComponent,
     NavbarComponent,
-    SearchBarComponent,
+    LoginComponent,
+    LogoutComponent,
+    SignoutComponent,
 
   ],
   imports: [
@@ -55,7 +66,14 @@ import { SearchBarComponent } from './component/search-bar/search-bar.component'
     MatNativeDateModule,
     MatSelectModule,
     MatDividerModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSortModule,
+    MatStepperModule,
+    MatTabsModule,
+    MatGridListModule,
+    MatExpansionModule,
+    MatToolbarModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent],

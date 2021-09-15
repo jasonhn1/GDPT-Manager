@@ -10,7 +10,7 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
     border: none;
     margin-left: auto;
     margin-right: auto;
-    background-color: #303e44;
+    background-color: #2a393f;
     color:white;
 }
 
@@ -18,6 +18,7 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
     background: #1a2130;
     text-align: center;
     padding-bottom: 10px;
+    padding-top: 20px;
 }
 
 .footer-bottom p {
@@ -38,17 +39,37 @@ table{
     width:80%;
     margin-left: auto;
     margin-right: auto;
+    background-color: #00424f;
 }
 
 mat-paginator{
+    background-color: #2a393f;
     width:80%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 0;
+    margin-bottom: 30px;
 }
 
 
-div{
-    padding-bottom: 30px;
-    padding-top:30px;
+
+mat-form-field{
+    padding-left:15px;
+}
+
+
+#search-icon{
+    padding-top: 20px;
+}
+body{
+    background-size: cover;
+}
+
+
+#search-box{
+    margin-bottom: 20px;
+    width:30%;
+    background-color:#2a393f;
+    margin-left: 10%;
+    margin-right: 80%;
 }

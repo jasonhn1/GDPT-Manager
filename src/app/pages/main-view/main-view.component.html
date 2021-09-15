@@ -1,52 +1,62 @@
-<app-navbar></app-navbar> 
-  <div></div>
-  <button (click) = "addMemberClick()" class = "add-button" mat-stroked-button>
-    <mat-icon>add_circle_outline</mat-icon>
-  </button>
+<app-navbar></app-navbar>
 
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table">
+<div>
+<mat-card id="search-box">
+  <mat-icon id = "search-icon"[ngStyle]="{'color':'white'}">search</mat-icon>
+  <mat-form-field>
+    <input id = "search" matInput type="text" placeholder="Search"  (keyup)="doFilter($event)">
+  </mat-form-field>
+</mat-card>
+
+  <mat-card class= "hide" (window:resize)="onResize($event)" *ngIf = "displayAdminBtn"><button mat-icon-button ><mat-icon >account_circle</mat-icon></button></mat-card>
+</div>
+
+<button id = "add-button"(click) = "addMemberClick()" class = "add-button" mat-stroked-button>
+  <mat-icon>add_circle_outline</mat-icon>
+</button>
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8 table">
     <!-- Name Column -->
     <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
       <td mat-cell *matCellDef="let member" > {{member.name}} </td>
       <!-- *matCellDef="let element" -->
     </ng-container>
   
     <!-- Address Column -->
     <ng-container matColumnDef="address">
-        <th mat-header-cell *matHeaderCellDef> Address </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Address </th>
         <td mat-cell *matCellDef="let member"> {{member.address}} </td>
       </ng-container>
 
     <!-- dob Column -->
     <ng-container matColumnDef="dob">
-      <th mat-header-cell *matHeaderCellDef> Date Of Birth </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Date Of Birth </th>
       <td mat-cell *matCellDef="let member"> {{member.dob}} </td>
     </ng-container>
   
     <!-- Phap Danh Column -->
     <ng-container matColumnDef="phapdanh">
-      <th mat-header-cell *matHeaderCellDef> Pháp Danh </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Pháp Danh </th>
       <td mat-cell *matCellDef="let member"> {{member.phapdanh}} </td>
     </ng-container>
 
     <!-- Emergency Contact Column -->
     <ng-container matColumnDef="contact">
-      <th mat-header-cell *matHeaderCellDef> Emergency Contact </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Emergency Contact </th>
       <td mat-cell *matCellDef="let member"> {{member.contact.name}} </td>
     </ng-container>
 
     <!-- Active Column -->
     <ng-container matColumnDef="active">
       <th mat-header-cell *matHeaderCellDef> Active </th>
-      <td mat-cell *matCellDef="let member"> {{member.active}} </td>
+      <td mat-cell *matCellDef="let member" mat-sort-header> {{member.active}} </td>
     </ng-container>
 
     <ng-container class = "edit-spacing" matColumnDef="edit">
       <th mat-header-cell *matHeaderCellDef> Edit </th>
       <td mat-cell *matCellDef="let member"><button mat-icon-button
         (click)="editMemberClick(member)" ><mat-icon aria-label="Edit icon">edit</mat-icon></button></td>
-    </ng-container>
+    </ng-container>  
   
     <ng-container matColumnDef="delete">
       <th mat-header-cell *matHeaderCellDef> Delete </th>
