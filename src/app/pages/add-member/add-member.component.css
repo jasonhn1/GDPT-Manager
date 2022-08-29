@@ -1,12 +1,45 @@
+<<<<<<< HEAD
 .container{
   border-radius: 25px;
   top: 50%;
   left: 50%;
+=======
+mat-card{
+  display:flex;
+  justify-content:center;
+  width: 60%;
+  height:80%;
+>>>>>>> 37253dda971bf14b72365b80416a622c01b7d828
   margin-left: auto;
   margin-right: auto;
   margin-top: 120px;
 }
 
+
+h4{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+table,tr,td{
+  padding-bottom: 0px;
+  padding-top: 0px;
+  
+}
+.table-spacing{
+  padding-bottom: 0px;
+  padding-top: 0px;
+  
+}
+<<<<<<< HEAD
+.borders{
+  border-color: white;
+=======
+
+div{
+  padding-bottom: 30px;
+  padding-top:30px;
+>>>>>>> 37253dda971bf14b72365b80416a622c01b7d828
+}
 
 h4{
   padding-top: 10px;
@@ -35,12 +68,24 @@ td{
   padding-right: 60px;
 }
 
+<<<<<<< HEAD
 .name-card{
   width: 50%;
   margin-left: auto;
   margin-right: auto;
 }
 
+=======
+/* html,body{
+  background-color: #05e8ba;
+  background-image: linear-gradient(315deg, #05e8ba 0%, #087ee1 74%);
+} */
+mat-card-title{
+  padding-top: 20px;
+}
+
+
+>>>>>>> 37253dda971bf14b72365b80416a622c01b7d828
 .space-top{
   padding-top: 300px;
 }
@@ -48,6 +93,7 @@ td{
 .space-bottom{
   padding-bottom: 300px;
 }
+<<<<<<< HEAD
 
 mat-stepper, mat-step{
   background: #2a393f;
@@ -234,3 +280,5 @@ span{
   vertical-align: middle;
   font-size: 20px;
 }
+=======
+>>>>>>> 37253dda971bf14b72365b80416a622c01b7d828

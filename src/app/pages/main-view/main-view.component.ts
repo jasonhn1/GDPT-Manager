@@ -6,8 +6,11 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import {MatDialog} from '@angular/material/dialog';
 import { DialogService } from 'src/app/dialog.service';
+<<<<<<< HEAD
 import { EditDataService } from 'src/app/edit-data.service';
 import { MatSort } from '@angular/material/sort';
+=======
+>>>>>>> 37253dda971bf14b72365b80416a622c01b7d828
 
 @Component({
   selector: 'app-main-view',
@@ -20,28 +23,45 @@ export class MainViewComponent implements OnInit,AfterViewInit {
   displayedColumns: string[] = ['name', 'address', 'dob', 'phapdanh', 'contact', 'active','edit','delete'];
   dataSource = new MatTableDataSource();
   memberId:string="";
+<<<<<<< HEAD
   term!:any;
 
   displayAdminBtn = false;
+=======
+>>>>>>> 37253dda971bf14b72365b80416a622c01b7d828
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
+<<<<<<< HEAD
   constructor(
     private elementRef: ElementRef,
     private _editMemberService :EditDataService,
     public dialog: MatDialog,
+=======
+  constructor(public dialog: MatDialog,
+>>>>>>> 37253dda971bf14b72365b80416a622c01b7d828
     private memberService: MemberService,
     private route:ActivatedRoute,
     private dialogService:DialogService,
     private router: Router) {
+<<<<<<< HEAD
       this.route.params.subscribe((params:Params)=> console.log(params._id));
+=======
+      this.route.params.subscribe((params:Params)=> console.log(params.memberId));
+>>>>>>> 37253dda971bf14b72365b80416a622c01b7d828
     }
 
 
   ngOnInit(): void {
     this.elementRef.nativeElement.ownerDocument.body.style.background = '#a2d1c5';
     this.memberService.getMembers().subscribe( (data) => {this.dataSource.data= data});
+
+    this.route.params.subscribe((params: Params) =>{
+      this.memberId = params.memberId;
+      if(!this.memberId) return;
+      this.memberService.getMembers().subscribe((data) => this.members = data);
+    });
   }
   // 767
   ngAfterViewInit() {
@@ -59,6 +79,7 @@ export class MainViewComponent implements OnInit,AfterViewInit {
   addMemberClick(){
     this.router.navigate(['./add-member'],{ relativeTo: this.route });
   }
+<<<<<<< HEAD
   editMemberClick(member:Member){
     this._editMemberService.sendMember(member);
     this.router.navigate(['./edit-member'],{ relativeTo: this.route });
@@ -79,4 +100,21 @@ export class MainViewComponent implements OnInit,AfterViewInit {
       }
     });
   }
+=======
+  editMemberClick(){
+    this.router.navigate(['./edit-member'],{ relativeTo: this.route });
+  }
+
+  deleteMember(member:Member){
+    this.dialogService.openConfirmDialog()
+    .afterClosed().subscribe(res =>{
+      console.log(res);
+      if (res){
+          console.log(this.memberId);
+          this.memberService.deleteMember(this.memberId)
+          .subscribe(() => this.members = this.members.filter(m=>m._id != member._id));
+      }
+    });
+  }
+>>>>>>> 37253dda971bf14b72365b80416a622c01b7d828
 }

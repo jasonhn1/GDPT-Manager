@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { Component, OnInit,AfterViewInit, ViewChild ,ElementRef} from '@angular/core';
+=======
+import { Component, OnInit,AfterViewInit } from '@angular/core';
+>>>>>>> 37253dda971bf14b72365b80416a622c01b7d828
 import { ActivatedRoute,Router } from '@angular/router';
 import {MemberService} from 'src/app/member.service';
 import Member from 'src/app/model/member';
@@ -6,8 +10,11 @@ import { FormBuilder, FormGroup,Validators} from '@angular/forms';
 import { Loader } from '@googlemaps/js-api-loader';
 
 
+<<<<<<< HEAD
 declare const google:any;
 
+=======
+>>>>>>> 37253dda971bf14b72365b80416a622c01b7d828
 @Component({
   selector: 'app-add-member',
   templateUrl: './add-member.component.html',
@@ -33,9 +40,14 @@ export class AddMemberComponent implements OnInit,AfterViewInit {
   startDate = new Date(2000, 0, 1);
   
   constructor(
+<<<<<<< HEAD
     private elementRef: ElementRef,
     private formBuilder:FormBuilder,
     private memberService: MemberService,
+=======
+    private formBuilder:FormBuilder
+    ,private memberService: MemberService,
+>>>>>>> 37253dda971bf14b72365b80416a622c01b7d828
     private route:ActivatedRoute,
     private router: Router) { }
 
@@ -144,6 +156,20 @@ hide(){
     return `${date.getFullYear()}-${month}-${day}`
   }
 
+  convertDatetoString(date:any){
+    var month =date.getMonth();
+    var day = date.getDate();
+    if (month <= 9){
+      month = `0${month}`;
+    }
+
+    if (day <= 9){
+      day= `0${day}`;
+    }
+
+    return `${date.getFullYear()}-${month}-${day}`
+  }
+
   initializeForm(){
     this.memberForm = this.formBuilder.group({
       name: this.formBuilder.group({
@@ -168,6 +194,7 @@ hide(){
   }
 
   onSubmit(){
+<<<<<<< HEAD
     var member_dob = this.convertDatetoString(this.nameFormGroup.value.dob);
     this.member = {
       _id:"",
@@ -177,10 +204,25 @@ hide(){
       dob:member_dob,
       phapdanh: "",
       contact:this.contactFormGroup.value,
+=======
+    var member_dob = this.convertDatetoString(this.memberForm.value.dob);
+    this.member = {
+      _id:"",
+      name: this.memberForm.value.name.firstname + " " + this.memberForm.value.name.lastname,
+      address: this.memberForm.value.address.street + " "+ this.memberForm.value.address.city
+      + " " + this.memberForm.value.address.state+ " " + this.memberForm.value.address.postalcode,
+      dob:member_dob,
+      phapdanh: this.memberForm.value.phapdanh,
+      contact:this.memberForm.value.contact,
+>>>>>>> 37253dda971bf14b72365b80416a622c01b7d828
       active:true
     };
 
     this.memberService.addMember(this.member).subscribe(
       ()=> this.router.navigate(['../'],{relativeTo: this.route}));
+<<<<<<< HEAD
+=======
+
+>>>>>>> 37253dda971bf14b72365b80416a622c01b7d828
   }
 }

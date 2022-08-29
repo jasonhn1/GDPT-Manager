@@ -25,6 +25,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatDialogModule} from '@angular/material/dialog';
+<<<<<<< HEAD
 import { MatSortModule } from '@angular/material/sort';
 import {MatStepperModule} from '@angular/material/stepper';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -33,6 +34,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { LogoutComponent } from './pages/logout/logout.component';
 import { SignoutComponent } from './pages/signout/signout.component';
+=======
+>>>>>>> 37253dda971bf14b72365b80416a622c01b7d828
 
 
 @NgModule({
@@ -66,6 +69,7 @@ import { SignoutComponent } from './pages/signout/signout.component';
     MatNativeDateModule,
     MatSelectModule,
     MatDividerModule,
+<<<<<<< HEAD
     MatDialogModule,
     MatSortModule,
     MatStepperModule,
@@ -74,6 +78,9 @@ import { SignoutComponent } from './pages/signout/signout.component';
     MatExpansionModule,
     MatToolbarModule,
 
+=======
+    MatDialogModule
+>>>>>>> 37253dda971bf14b72365b80416a622c01b7d828
   ],
   providers: [],
   bootstrap: [AppComponent],

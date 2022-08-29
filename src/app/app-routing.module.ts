@@ -10,9 +10,12 @@ import { SignoutComponent } from './pages/signout/signout.component';
 const routes: Routes = [
   {path:'',component: MainViewComponent},
   {path:'add-member', component: AddMemberComponent},
+<<<<<<< HEAD
   {path:'edit-member', component: EditMemberComponent},
   {path:'login', component:LoginComponent},
   {path:'signedout',component:SignoutComponent}
+=======
+>>>>>>> 37253dda971bf14b72365b80416a622c01b7d828
 ];
 
 @NgModule({
